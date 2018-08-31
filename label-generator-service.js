@@ -1,0 +1,626 @@
+
+exports.generateVTPLabel = ({district_name, order_id}) => {
+	return `
+		<html><head>
+    <title>ShipChung.vn</title>
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    
+    body {
+        font-family: Roboto,Helvetica,Verdana,Arial,sans-serif;
+        font-size: 14px;
+        color: #58666e;
+        background-color: transparent;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.42857143;
+    }
+    @page {
+            size: A5 portrait;
+
+            
+        }
+        .pleft {
+             float:left;
+         }
+         .pright {
+             float:right;
+         }         
+         .mainPrints {   
+             max-height: 20cm;   
+             margin: 0 10px;     
+             background: white; 
+         }
+         .page {
+            width: 14.8cm;
+            height: 20.0cm;
+            margin: 0 auto; 
+            background-color: #FFF;
+            color: #000;
+         }
+         @page {
+             margin: 0;
+         }
+         .logo_cod_new {
+                height: 60px;
+                max-width: 200px;
+                position: absolute;
+                right: 0;
+                top: 0; 
+        }
+        body{
+                font-size: 13px ;
+                background-color: #FFF;
+            }
+        .watermark{
+            position: relative;
+        }
+        
+
+
+
+
+.mainPrints {
+                                
+        width: 120mm !important;
+        height: 195mm;
+        margin: 0;
+        padding: 0;
+        margin-top:15px;
+        max-height: 535px;
+    }
+    @media print {
+    body {
+        font-family: Arial, Helvetica, sans-serif;       
+    }
+    }
+
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif; 
+        font-weight: 100;
+
+    }
+    body {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif; 
+    -webkit-font-smoothing: antialiased;
+    }
+
+    .clearfix:after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+
+    #table-box {
+    
+    width: 100% !important;
+    border: 1px solid #000;
+    }
+
+    .tb-header1 {
+    /* padding: 5px 0; */
+    border-bottom: 1px solid #000;
+    }
+    .tb-header1 .col {
+            width: 50%;
+        float: left;
+        text-align: center;
+        min-height: 50px;
+    }
+    .tb-header1 .col span {
+    display: block;
+    }
+    .tb-header1 .col:nth-child(1) {
+    border-right: 2px solid #000;
+    }
+    .tb-header1 .col:nth-child(1) span {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 5px;
+    }
+    /* .tb-header1 .col + .col {
+    padding-top: 10px;
+    } */
+    .dochvu{
+        padding-top: 7px
+    }
+    .tb-header1 .col + .col span {
+    font-weight: bold;
+    font-size: 20px;
+    /* padding: 7px 0; */
+    border-right: 2px solid #000;
+    }
+    .tb-header1 .col:last-child span {
+    border: none;
+    }
+
+    .tb-header2 {
+    border-bottom: 1px solid #000;
+    }
+    .tb-header2 .left {
+    position: relative;
+    letter-spacing: -1px;
+    min-width: 50px;
+    float: left;
+    padding-left: 3px;
+    }
+    .tb-header2 .left span {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+    }
+    .tb-header2 .right {
+    min-width: 50px;
+    float: right;
+    text-align: right;
+    padding-right: 30px;
+    /*padding-top: 3px;*/
+    }
+
+    .tb-header3 {
+    border-bottom: 1px solid #000;
+    padding-top: 3px;
+    }
+    .tb-header3 .pic {
+            text-align: center;
+        /* padding-bottom: 10px;
+        width: 80%;*/
+        height: auto;
+    }
+    .tb-header3 .pic img {
+    width: 100%;
+    }
+    .tb-header3 .price {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    }
+    .tb-header3 .price span {
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    left: 4px;
+    }
+
+    /*.tb-header4 {
+    margin-top: 2px;
+    }*/
+    .tb-header4 .col {
+    width: 50%;
+    padding: 0px 0 0px 5px;
+    border-left: 2px solid #000;
+    float: left;
+    }
+    .tb-header4 .col dl dt {
+    min-width: 50px;
+    float: left;
+    }
+    .tb-header4 .col dl dd {
+    min-width: 50px;
+    float: left;
+    }
+    .tb-header4 .col:nth-child(1) {
+    
+    border: none;
+    font-size: 13px;
+    margin-bottom: 0;
+    }
+    .col-65 {
+        min-height:37px;
+        padding-top: 10px !important;
+    }
+    .col-35 {
+        min-height:48px;
+        padding-top: 10px !important;
+    }
+    .price{
+        margin-bottom: 10px;
+    }
+    .dress{
+        padding-top: 10px;
+    }
+    .tb-header3 .pic {
+        margin: 5px 10px 1px 10px !important;
+    }
+    .tb-header3 .pic img {
+        width: 350px !important;
+        height: 50px !important;
+    }
+    .tb-header4 .col-65 {
+    width: 68%;
+    padding: 0px 0 0px 5px;
+    border-left: 2px solid #000;
+    float: left;
+    }
+    .tb-header4 .col-65 dl dt {
+    min-width: 50px;
+    float: left;
+    }
+    .tb-header4 .col-65 dl dd {
+    min-width: 50px;
+    float: left;
+    }
+    .tb-header4 .col-65:nth-child(1) {
+    
+    border: none;
+    font-size: 13px;
+    margin-bottom: 0;
+    }
+    .tb-header4 .col-65:nth-child(1) dl {
+    font-size: 13px;
+    }
+    .tb-header4 .col-65:nth-child(1) dl dd {
+    font-weight: bold;
+    }
+    
+    .tb-header4 .col-35 {
+    width: 32%;
+    padding: 0px 10px 0px 10px;
+    border-left: 2px solid #000;
+    float: left;
+    }
+    .tb-header4 .col-35 dl dt {
+    min-width: 50px;
+    float: left;
+    }
+    .tb-header4 .col-35 dl dd {
+    min-width: 50px;
+    float: left;
+    }
+    .tb-header4 .col-35:nth-child(1) {
+    
+    border: none;
+    font-size: 13px;
+    margin-bottom: 0;
+    }
+    .tb-header4 .col-35:nth-child(1) dl {
+    font-size: 13px;
+    }
+    .tb-header4 .col-35:nth-child(1) dl dd {
+    font-weight: bold;
+    }
+
+    .tb-body {
+    border: 3px solid #000;
+    border-radius: 5px;
+    /*margin: 0 1px;*/
+    padding: 5px 5px 0px 6px;
+    min-height: 120px; 
+    }
+    .tb-body dl * {
+    display: inline-block;
+    vertical-align: middle;
+    }
+    .tb-body dl:nth-child(1) {
+    font-size: 14px;
+    font-weight: bold;
+    }
+    .tb-body dl:nth-child(1) dd {
+    font-size: 24px;
+    
+    }
+    .tb-body dl:nth-child(2) {
+    margin-top: 0px;
+    }
+    
+    .tb-body dl:nth-child(3) dd {
+    font-size: 14px;
+    }
+    .tracking_code {
+        font-size: 19px;
+    }
+
+/*			.dress {
+    margin: 3px;
+    }*/
+    .dress dl * {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 3px;
+    white-space: inherit !important;
+    }
+    .dress dl dd {
+    font-size: 14px;
+    padding-left: 5px;
+    font-weight: bold;
+    }
+
+    .code {
+        margin-top      : 10px;
+        margin-bottom   : 10px;
+    }
+    .chuky {
+        margin-top: 10px !important;
+        padding-top: 5px !important;
+        height: 75px;
+    }
+    .code .left {
+    width: 50%;
+    float: left;
+    padding: 0px 0 0 20px;
+    }
+    .code .left .title {
+    font-size: 24px;
+    font-weight: bold;
+    /*margin-bottom: 5px;*/
+    }
+    .code .right {
+    text-align: center;
+    width: 50%;
+    float: left;
+    /* margin-top: 10px;*/
+    }
+    .code .right .pic {
+    width: 80px;
+    margin: auto;
+    height: auto;
+    }
+    .code .right .pic img {
+    width: 100%;
+    }
+    .code .right .number {
+    font-size: 12px;
+    letter-spacing: 1px;
+    }
+
+    .tb-footer {
+    /* margin-top: 5px;*/
+    border-top: 1px solid #000;
+    text-align: center;
+    padding-top: 3px;
+    }
+    dl {
+        margin-bottom: 0 !important;
+        margin :0 !important;
+        /* line-height: 25px; */
+        display: initial;
+    }
+    dl *{
+        display: initial;
+    }
+    p {
+        margin: 0 0 10px;
+    }
+    dd {
+        margin-left: 0;
+    }
+    dt, dd {
+        line-height: 1.42857143;
+    }
+    @media print {
+        .print_td2 ,.print_td, .print_td3,.print_dichvu{
+            font-size: 12px;
+        }
+        body{
+            font-size: 12px ;
+        }
+            .page {
+                margin: 15px;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                
+            }
+        .settings {
+            display: none !important;
+        }
+        #livechat-compact-container{
+            display: none !important;
+        }
+        .page_break{
+            page-break-after: always !important;
+        }
+    }
+
+    .settings {
+    z-index: 1050;
+    position: fixed;
+    top: 120px;
+    right: -140px;
+    width: 240px;
+    -webkit-transition: right .2s;
+    transition: right .2s;
+}
+.panel-default {
+    border-color: #dee5e7;
+}
+.panel {
+    border-radius: 2px;
+}
+.bg-orange {
+    background-color: #FFA931;
+    color: #FFF;
+}
+.btn {
+    font-weight: 500;
+    border-radius: 2px;
+}
+.btn, :focus {
+    outline: 0 !important;
+}
+.btn {
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+        border-right-width: 1px;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+}
+.btn, .checkbox-inline, .radio-inline {
+    display: inline-block;
+    vertical-align: middle;
+}
+.settings > .btn_print {
+    top: -1px;
+}
+.settings > .btn_print, .settings > .btn_type {
+    border-right-width: 0;
+    position: absolute;
+    padding: 10px 15px;
+    border-color: #dee5e7;
+}
+  
+    
+    
+              
+</style>
+   
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+   
+    
+</head>
+<body>
+            
+                 
+                <div class="page"> 
+               
+                <div class="mainPrints" style="max-width:95%;float:left;margin-left:35px;    margin-top: 40px;">       
+                        
+        
+<div>
+     
+        <div>
+            
+            <div id="table-box">
+                <div class="tb-header1 clearfix">
+                    <div class="col">
+                    <div class="dochvu">Dịch vụ </div> 
+                        <span style="font-size: 14px;">
+                        
+                    </span>Chuyển phát nhanh</div>
+                    <div class="col">
+                        <div class="dochvu">Tỉnh phát  </div> 
+                        <span>${district_name}</span></div>
+                </div>
+
+                <div class="tb-header2 clearfix">
+                    <div class="left">T. lượng (Gr)<span> 234</span></div>
+                    <div class="right">Ngày gửi: ....../ ....../ 2018</div>
+                </div>
+
+                <div class="tb-header3" style="text-align: center;">
+                        <p class="pic" style="margin: 0 0 0px"><img style="width: 260px;height: 33px;" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAHsAAAAoAQMAAADkExdlAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAACFJREFUKJFjuCS9SDn2nSnnxpI7Nyfelk1gGBUYFRh8AgBd0D/A47+SOgAAAABJRU5ErkJggg==">
+                               
+                        </p>
+                        <span class="tracking_code" style="font-weight: bold;">${order_id}</span>
+                    
+                </div>
+
+                <div class="tb-header4 clearfix">
+                    <div class="col-65">
+                        <dl class="clearfix">
+                            <dt style="font-weight: bold;">NGƯỜI GỬI:&nbsp;Hiếu</dt>
+                        </dl>
+                        <dl>
+                            <dt><span style="font-weight: bold;">ĐIỆN THOẠI:</span>&nbsp;
+                                <span style="font-weight: bold;">21342</span>
+                            </dt>
+                        </dl>
+                        
+                    </div>
+                    <div class="col-35">
+                        <dl class="clearfix">
+                            <dt>
+                                <img style="width: 100px;height:34px" src="https://seller.shipchung.vn/img/logo-hvc/1.png">
+                            </dt>
+                        </dl>
+                    </div>
+
+                    <div class="price" style="padding-left:5px;">
+                            <dt>ĐỊA CHỈ:&nbsp; 3 ,Phường Bình Thọ ,Quận Thủ Đức,  TP.Hồ Chí Minh</dt>
+                    </div>
+                </div>
+                <div class="tb-body">
+                    <dl class="clearfix">
+                    <dt style="font-weight: bold;">Tiền thu hộ:</dt>
+                    <dd>56,400đ</dd>
+                    <dt style="font-weight: bold;">&nbsp;&nbsp;Số lượng:</dt>
+                    <dd> 3</dd>
+                    </dl>
+                    <dl class="clearfix">
+                    <dt style="font-weight: bold;margin-top: -6px;">NỘI DUNG:&nbsp;
+                            <span>234 </span>
+                            <span></span>
+                            
+                                <span style="font-weight: bold;">CHO XEM COI HÀNG - GỌI ĐIỆN TRƯỚC KHI GIAO</span>
+                            
+                            
+                        
+                    </dt>
+                    <!-- <dd></dd> -->
+                    </dl>
+                    <dl class="clearfix" style="line-height: 0px;">
+                    <dt style="font-weight: bold;">Giá trị hàng:&nbsp;<strong>3,000đ</strong></dt>
+                    <!-- <dd>đ</dd> -->
+                    </dl>
+                    
+                </div>
+                <div class="dress">
+                    <div class="col" style="width: 79%;float:left;min-height:98px">
+                        <dl class="clearfix">
+                            <dt style="font-weight: bold;">NGƯỜI NHẬN:&nbsp;e </dt>
+                            <dt style="font-weight: bold;width: 100%;">ĐỊA CHỈ:&nbsp;3,Xã Bình định,Huyên Yên Lạc,Vĩnh Phúc</dt>
+                            <!-- <dt style="font-weight: bold;width: 100%;white-space: nowrap;">Huyên Yên Lạc,Vĩnh Phúc</dt> -->
+                            <dt><span style="font-weight: bold;">ĐIỆN THOẠI:</span> &nbsp;<span style="font-size: 20px;font-weight: bold;">01677465509 </span></dt>
+                            <!-- <dd></dd> -->
+                        </dl>
+                    </div>
+                    <div style="width:20%;float:left;min-height:98px">
+                            <img style="width: 100%;" src="data:image/png;base64,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5cuxk3bWKnhgCOQRyK0KKKKKKKKKK+AK+v8A4Jf8kh0L/t4/9KJK9Aoooor5/wD2mv8AmVv+3v8A9o1wHwS/5K9oX/bx/wCk8lfX9fAFfX/wS/5JDoX/AG8f+lElegV5/wDG3/kkOu/9u/8A6UR18gUV9f8AwS/5JDoX/bx/6USV5/8AtNf8yt/29/8AtGuA+CX/ACV7Qv8At4/9J5K+v6KKKKK+AK+v/gl/ySHQv+3j/wBKJK9Aooooooooor4Aooooooor0D4Jf8le0L/t4/8ASeSvr+vgCiiiiivr/wCCX/JIdC/7eP8A0okr0CvP/jb/AMkh13/t3/8ASiOvkCiivf8A9mX/AJmn/t0/9rV9AUUUUUUUUUUUUUV5/wD8KS+Hn/Qvf+Ttx/8AHKP+FJfDz/oXv/J24/8AjlH/AApL4ef9C9/5O3H/AMco/wCFJfDz/oXv/J24/wDjlH/Ckvh5/wBC9/5O3H/xyj/hSXw8/wChe/8AJ24/+OUf8KS+Hn/Qvf8Ak7cf/HKP+FJfDz/oXv8AyduP/jlaGifC3wb4c1iDVtJ0b7PfQbvLl+1TPt3KVPDOQeCRyK7CvP8A/hSXw8/6F7/yduP/AI5R/wAKS+Hn/Qvf+Ttx/wDHKP8AhSXw8/6F7/yduP8A45R/wpL4ef8AQvf+Ttx/8co/4Ul8PP8AoXv/ACduP/jlH/Ckvh5/0L3/AJO3H/xyuw0TRNO8OaPBpOk2/wBnsYN3lxb2fbuYseWJJ5JPJrQrP1vRNO8R6PPpOrW/2ixn2+ZFvZN21gw5UgjkA8GuP/4Ul8PP+he/8nbj/wCOUf8ACkvh5/0L3/k7cf8Axyj/AIUl8PP+he/8nbj/AOOV0HhjwT4d8Hfav7A0/wCx/atnnfvpJN23O377HGNzdPWugooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooor/2Q==">
+                    </div>
+                    <br>
+                    <div class="tb-header1 clearfix ">
+                        <div class="col chuky" style="border-top: 1px solid #000;margin-top: -6px;">
+                            <div class="">Chử ký bưu tá (BC) </div> 
+                                
+                        </div>
+                        <div class="col chuky" style="border-top: 1px solid #000;margin-top: -6px;">
+                            <div class="">Chử ký người nhận  </div> 
+                            
+                        </div>
+                    </div>
+                    <div class="code clearfix">
+                            <div class="left">
+                            <p class="title" style="margin-bottom: 0px;">PHIẾU GỬI</p>
+                            
+                            </div>
+                            
+                            
+                    </div>
+                </div>
+                
+        </div>
+
+    </div>
+
+</div>
+
+                    </div>
+                </div>
+                
+        <div class="settings panel panel-default">
+            <button class="btn bg-orange btn_print no-shadow pos-abt hidden-print" onclick="window.print();"><i class="fa fa-print"></i> In vận đơn</button>
+        </div>        
+
+
+</body></html>	
+	`;
+}
